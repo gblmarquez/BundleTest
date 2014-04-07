@@ -18,5 +18,6 @@ require.config
             deps : ['jquery', 'underscore', 'backbone']
             exports : 'Marionette'
 
-require ['App'], ->
-    debugger
+require ['App'], (App) ->
+    app = new App
+    app.render()
