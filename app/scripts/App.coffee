@@ -1,4 +1,4 @@
-define ['marionette'], ->
+define [], ->
 
     class App extends Marionette.ItemView
 
