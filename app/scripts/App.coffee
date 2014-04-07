@@ -1,0 +1,2 @@
+define ['marionette'], ->
+    debugger
