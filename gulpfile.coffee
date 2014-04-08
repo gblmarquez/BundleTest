@@ -4,7 +4,7 @@ watch = require 'gulp-watch'
 plumber = require 'gulp-plumber'
 connect = require 'gulp-connect'
 bower = require 'gulp-bower'
-requirejs = require 'gulp-requirejs'
+requirejs = require 'requirejs'
 
 gulp.task 'default', ['bower', 'server', 'watch']
 
@@ -17,14 +17,22 @@ gulp.task 'watch', ->
         .pipe coffee()
         .pipe gulp.dest 'app/scripts'
 
+gulp.task 'coffee', ->
+    gulp.src 'app/scripts/**/*.coffee'
+        .pipe plumber()
+        .pipe coffee()
+        .pipe gulp.dest 'app/scripts'
+
 gulp.task 'server', ->
     connect.server root: 'app'
 
-gulp.task 'bundle', ->
-    requirejs
+gulp.task 'bundle', ['coffee'], ->
+    requirejs.optimize
         baseUrl: 'app/scripts'
         mainConfigFile: 'app/scripts/Config.js'
-        out: 'Bootstrap.js'
+        out: 'app/scripts/Bootstrap.js'
+        preserveLicenseComments: false
+        wrapShim: true
         include: [
             'backbone'
             'underscore'
@@ -34,4 +42,3 @@ gulp.task 'bundle', ->
             'Infra'
             'App'
         ]
-    .pipe gulp.dest 'app/scripts'
