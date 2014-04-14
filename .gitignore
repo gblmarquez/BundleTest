@@ -3,3 +3,4 @@
 .idea
 node_modules
 app/scripts/lib
+app/scripts/require.js
