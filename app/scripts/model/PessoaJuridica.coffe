@@ -1,0 +1,5 @@
+define [], ->
+	
+	class PessoaJuridica extends Backbone.Model
+	
+		urlRoot: 'cnb.azurewebsites.net/api/pessoajuridica'

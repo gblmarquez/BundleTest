@@ -1,0 +1,5 @@
+define [], ->
+
+	class PessoasJuridicasCollectionView extends Marionette.CollectionView
+
+        itemView: PessoaJuridicaItemView
