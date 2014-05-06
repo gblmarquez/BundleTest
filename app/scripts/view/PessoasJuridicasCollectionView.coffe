@@ -1,4 +1,4 @@
-define [], ->
+define ['../view/PessoaJuridicaItemView'], -> (PessoaJuridicaItemView)
 
 	class PessoasJuridicasCollectionView extends Marionette.CollectionView
 

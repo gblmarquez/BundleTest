@@ -1,0 +1,5 @@
+define ['PessoaJuridica'], -> (PessoaJuridica)
+	
+	class PessoasJuridicas extends Backbone.Collection
+	
+		model: PessoaJuridica

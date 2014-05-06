@@ -1,4 +1,4 @@
-define [], ->
+define ['collection/PessoasJuridicas'], ->
 
     class App extends Marionette.ItemView
 
