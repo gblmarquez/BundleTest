@@ -5,4 +5,4 @@ require ['Config'], ->
 
         require ['App'], (App) ->
             app = new App
-            app.render()
+            app.start()

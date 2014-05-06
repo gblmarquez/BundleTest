@@ -1,17 +1,18 @@
-define ['model/PessoasJuridicas'], (PessoasJuridicas) ->
+define ['model/PessoasJuridicas', 'view/PessoasJuridicasCollectionView'], (PessoasJuridicas, PessoasJuridicasCollectionView) ->
 
-	class App extends Marionette.ItemView
-
-        el: '#content'
-
-        render: ->
-            @$el.html "asdasd"
+	class App extends Backbone.Marionette.Application
 
         initialize: ->
-        	a = new PessoasJuridicas()
-        	a.fetch()
-        	console.log(JSON.stringify(a))
 
-	
+        	console.log('initialize')
 
-    
+        	this.addRegions({
+        		form: "#form"
+        		list: "#list"
+        	})
+
+        	this.addInitializer(->
+        		this.pessoasJuridicas = new PessoasJuridicas()
+
+        		this.form.show(new PessoasJuridicasCollectionView({ collection: this.pessoasJuridicas }))
+        	)

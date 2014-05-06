@@ -2,5 +2,5 @@ define ['../model/PessoasJuridicas', 'view/PessoaJuridicaItemView'], (PessoasJur
 
 	class PessoasJuridicasCollectionView extends Marionette.CollectionView
 
-		collection: PessoasJuridicas
-        itemView: PessoaJuridicaItemView
+		collection: new PessoasJuridicas
+        itemView: new PessoaJuridicaItemView
