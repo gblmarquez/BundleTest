@@ -25,7 +25,7 @@ gulp.task 'coffee', ['require-copy'], ->
         .pipe gulp.dest 'app/scripts'
 
 gulp.task 'server', ->
-    connect.server root: 'app'
+    connect.server root: 'app', port: 2100
 
 gulp.task 'require-copy', ->
     gulp.src 'app/scripts/lib/requirejs/require.js'
